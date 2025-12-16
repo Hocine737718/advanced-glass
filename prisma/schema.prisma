@@ -18,16 +18,16 @@ datasource db {
  * USERS (ADMIN)
  * =========================
  */
-model UserAccount {
-  id            Int     @id @default(autoincrement())
-  email         String  @unique
-  password_hash String
-  role          String  @default("admin")
-  is_active     Boolean @default(true)
+// model UserAccount {
+//   id            Int     @id @default(autoincrement())
+//   email         String  @unique
+//   password_hash String
+//   role          String  @default("admin")
+//   is_active     Boolean @default(true)
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-}
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
 
 /**
  * =========================
@@ -51,18 +51,18 @@ model Language {
  * MEDIA
  * =========================
  */
-model Media {
-  id        Int     @id @default(autoincrement())
-  type      String
-  file_path String
-  alt_text  String?
+// model Media {
+//   id        Int     @id @default(autoincrement())
+//   type      String
+//   file_path String
+//   alt_text  String?
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
 
-  sectionItemMedia SectionItemMedia[]
-  modalMedia       ModalMedia[]
-}
+//   sectionItemMedia SectionItemMedia[]
+//   modalMedia       ModalMedia[]
+// }
 
 /**
  * =========================
@@ -74,8 +74,8 @@ model SiteSetting {
   key   String  @unique
   value String?
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 /**
@@ -89,8 +89,8 @@ model SocialLink {
   url      String
   position Int?
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 /**
@@ -104,8 +104,8 @@ model Page {
   published Boolean @default(true)
   position  Int?
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   translations PageTranslation[]
   sections     Section[]
@@ -142,8 +142,8 @@ model Section {
   position  Int?
   published Boolean @default(true)
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   page         Page                 @relation(fields: [page_id], references: [id], onDelete: Cascade)
   translations SectionTranslation[]
@@ -180,8 +180,8 @@ model SectionItem {
   position   Int?
   published  Boolean @default(true)
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   section      Section                  @relation(fields: [section_id], references: [id], onDelete: Cascade)
   translations SectionItemTranslation[]
@@ -235,8 +235,8 @@ model Link {
   url    String
   target String @default("_self")
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   items SectionItemLink[]
 }
@@ -266,8 +266,8 @@ model Modal {
   code      String  @unique
   published Boolean @default(true)
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   translations ModalTranslation[]
   media        ModalMedia[]
@@ -333,8 +333,8 @@ model Person {
   email     String?
   published Boolean @default(true)
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   translations PersonTranslation[]
   addresses    Address[]
@@ -387,4 +387,104 @@ model Phone {
   number    String
 
   person Person @relation(fields: [person_id], references: [id], onDelete: Cascade)
+}
+
+// Add to your existing UserAccount model or create if doesn't exist
+model UserAccount {
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  password_hash String
+  role          String   @default("USER")
+  is_active     Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Add relations
+  contents      Content[]
+
+  medias Media[]
+}
+
+// Add new models for content management
+model Content {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  content     String?
+  excerpt     String?
+  type        String   // 'page', 'post', 'product', 'service'
+  status      String   @default("draft") // 'draft', 'published', 'archived'
+  language    String   @default("en")    // for i18n
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  
+  // Metadata
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String?
+  
+  // Relations
+  authorId   Int?
+  author     UserAccount? @relation(fields: [authorId], references: [id])
+  
+  // Media
+  featuredImage String?
+  
+  // Timestamps
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Indexes
+  @@index([type, status])
+  @@index([slug])
+  @@index([language])
+}
+
+// For media/uploads
+model Media {
+  id          Int      @id @default(autoincrement())
+  filename    String
+  originalName String
+  path        String
+  mimeType    String
+  size        Int
+  altText     String?
+  caption     String?
+  
+  // Relations
+  uploadedById Int?
+  uploadedBy   UserAccount? @relation(fields: [uploadedById], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  modalMedias ModalMedia[]
+
+  sectionItemMedias SectionItemMedia[]
+}
+
+// For navigation/menus
+model Menu {
+  id        Int     @id @default(autoincrement())
+  name      String  @unique
+  location  String  // 'header', 'footer', 'sidebar'
+  
+  items     MenuItem[]
+}
+
+model MenuItem {
+  id          Int      @id @default(autoincrement())
+  label       String
+  url         String
+  icon        String?
+  order       Int      @default(0)
+  parentId    Int?     // For nested menus
+  isExternal  Boolean  @default(false)
+  
+  // Relations
+  menuId      Int
+  menu        Menu     @relation(fields: [menuId], references: [id])
+  
+  createdAt   DateTime @default(now())
 }

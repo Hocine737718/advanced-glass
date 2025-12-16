@@ -41,24 +41,24 @@ export type SiteSettingMinAggregateOutputType = {
   id: number | null
   key: string | null
   value: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type SiteSettingMaxAggregateOutputType = {
   id: number | null
   key: string | null
   value: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type SiteSettingCountAggregateOutputType = {
   id: number
   key: number
   value: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -75,24 +75,24 @@ export type SiteSettingMinAggregateInputType = {
   id?: true
   key?: true
   value?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type SiteSettingMaxAggregateInputType = {
   id?: true
   key?: true
   value?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type SiteSettingCountAggregateInputType = {
   id?: true
   key?: true
   value?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -186,8 +186,8 @@ export type SiteSettingGroupByOutputType = {
   id: number
   key: string
   value: string | null
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: SiteSettingCountAggregateOutputType | null
   _avg: SiteSettingAvgAggregateOutputType | null
   _sum: SiteSettingSumAggregateOutputType | null
@@ -217,16 +217,16 @@ export type SiteSettingWhereInput = {
   id?: Prisma.IntFilter<"SiteSetting"> | number
   key?: Prisma.StringFilter<"SiteSetting"> | string
   value?: Prisma.StringNullableFilter<"SiteSetting"> | string | null
-  created_at?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
 }
 
 export type SiteSettingOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   value?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SiteSettingWhereUniqueInput = Prisma.AtLeast<{
@@ -236,16 +236,16 @@ export type SiteSettingWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.SiteSettingWhereInput[]
   NOT?: Prisma.SiteSettingWhereInput | Prisma.SiteSettingWhereInput[]
   value?: Prisma.StringNullableFilter<"SiteSetting"> | string | null
-  created_at?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"SiteSetting"> | Date | string
 }, "id" | "key">
 
 export type SiteSettingOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   value?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.SiteSettingCountOrderByAggregateInput
   _avg?: Prisma.SiteSettingAvgOrderByAggregateInput
   _max?: Prisma.SiteSettingMaxOrderByAggregateInput
@@ -260,69 +260,69 @@ export type SiteSettingScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"SiteSetting"> | number
   key?: Prisma.StringWithAggregatesFilter<"SiteSetting"> | string
   value?: Prisma.StringNullableWithAggregatesFilter<"SiteSetting"> | string | null
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"SiteSetting"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"SiteSetting"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"SiteSetting"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"SiteSetting"> | Date | string
 }
 
 export type SiteSettingCreateInput = {
   key: string
   value?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type SiteSettingUncheckedCreateInput = {
   id?: number
   key: string
   value?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type SiteSettingUpdateInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   value?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SiteSettingUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   value?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SiteSettingCreateManyInput = {
   id?: number
   key: string
   value?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type SiteSettingUpdateManyMutationInput = {
   key?: Prisma.StringFieldUpdateOperationsInput | string
   value?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SiteSettingUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   key?: Prisma.StringFieldUpdateOperationsInput | string
   value?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SiteSettingCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   value?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SiteSettingAvgOrderByAggregateInput = {
@@ -333,20 +333,36 @@ export type SiteSettingMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   value?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SiteSettingMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   key?: Prisma.SortOrder
   value?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SiteSettingSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
+}
+
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
 
@@ -355,35 +371,35 @@ export type SiteSettingSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   id?: boolean
   key?: boolean
   value?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["siteSetting"]>
 
 export type SiteSettingSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   key?: boolean
   value?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["siteSetting"]>
 
 export type SiteSettingSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   key?: boolean
   value?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["siteSetting"]>
 
 export type SiteSettingSelectScalar = {
   id?: boolean
   key?: boolean
   value?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type SiteSettingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "value" | "created_at" | "updated_at", ExtArgs["result"]["siteSetting"]>
+export type SiteSettingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "key" | "value" | "createdAt" | "updatedAt", ExtArgs["result"]["siteSetting"]>
 
 export type $SiteSettingPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "SiteSetting"
@@ -392,8 +408,8 @@ export type $SiteSettingPayload<ExtArgs extends runtime.Types.Extensions.Interna
     id: number
     key: string
     value: string | null
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["siteSetting"]>
   composites: {}
 }
@@ -820,8 +836,8 @@ export interface SiteSettingFieldRefs {
   readonly id: Prisma.FieldRef<"SiteSetting", 'Int'>
   readonly key: Prisma.FieldRef<"SiteSetting", 'String'>
   readonly value: Prisma.FieldRef<"SiteSetting", 'String'>
-  readonly created_at: Prisma.FieldRef<"SiteSetting", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"SiteSetting", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"SiteSetting", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"SiteSetting", 'DateTime'>
 }
     
 

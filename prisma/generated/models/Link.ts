@@ -42,8 +42,8 @@ export type LinkMinAggregateOutputType = {
   type: string | null
   url: string | null
   target: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type LinkMaxAggregateOutputType = {
@@ -51,8 +51,8 @@ export type LinkMaxAggregateOutputType = {
   type: string | null
   url: string | null
   target: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type LinkCountAggregateOutputType = {
@@ -60,8 +60,8 @@ export type LinkCountAggregateOutputType = {
   type: number
   url: number
   target: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -79,8 +79,8 @@ export type LinkMinAggregateInputType = {
   type?: true
   url?: true
   target?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type LinkMaxAggregateInputType = {
@@ -88,8 +88,8 @@ export type LinkMaxAggregateInputType = {
   type?: true
   url?: true
   target?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type LinkCountAggregateInputType = {
@@ -97,8 +97,8 @@ export type LinkCountAggregateInputType = {
   type?: true
   url?: true
   target?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -193,8 +193,8 @@ export type LinkGroupByOutputType = {
   type: string
   url: string
   target: string
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: LinkCountAggregateOutputType | null
   _avg: LinkAvgAggregateOutputType | null
   _sum: LinkSumAggregateOutputType | null
@@ -225,8 +225,8 @@ export type LinkWhereInput = {
   type?: Prisma.StringFilter<"Link"> | string
   url?: Prisma.StringFilter<"Link"> | string
   target?: Prisma.StringFilter<"Link"> | string
-  created_at?: Prisma.DateTimeFilter<"Link"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"Link"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"Link"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Link"> | Date | string
   items?: Prisma.SectionItemLinkListRelationFilter
 }
 
@@ -235,8 +235,8 @@ export type LinkOrderByWithRelationInput = {
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   target?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   items?: Prisma.SectionItemLinkOrderByRelationAggregateInput
 }
 
@@ -248,8 +248,8 @@ export type LinkWhereUniqueInput = Prisma.AtLeast<{
   type?: Prisma.StringFilter<"Link"> | string
   url?: Prisma.StringFilter<"Link"> | string
   target?: Prisma.StringFilter<"Link"> | string
-  created_at?: Prisma.DateTimeFilter<"Link"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"Link"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"Link"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Link"> | Date | string
   items?: Prisma.SectionItemLinkListRelationFilter
 }, "id">
 
@@ -258,8 +258,8 @@ export type LinkOrderByWithAggregationInput = {
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   target?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.LinkCountOrderByAggregateInput
   _avg?: Prisma.LinkAvgOrderByAggregateInput
   _max?: Prisma.LinkMaxOrderByAggregateInput
@@ -275,16 +275,16 @@ export type LinkScalarWhereWithAggregatesInput = {
   type?: Prisma.StringWithAggregatesFilter<"Link"> | string
   url?: Prisma.StringWithAggregatesFilter<"Link"> | string
   target?: Prisma.StringWithAggregatesFilter<"Link"> | string
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"Link"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"Link"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Link"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Link"> | Date | string
 }
 
 export type LinkCreateInput = {
   type: string
   url: string
   target?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   items?: Prisma.SectionItemLinkCreateNestedManyWithoutLinkInput
 }
 
@@ -293,8 +293,8 @@ export type LinkUncheckedCreateInput = {
   type: string
   url: string
   target?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   items?: Prisma.SectionItemLinkUncheckedCreateNestedManyWithoutLinkInput
 }
 
@@ -302,8 +302,8 @@ export type LinkUpdateInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   target?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.SectionItemLinkUpdateManyWithoutLinkNestedInput
 }
 
@@ -312,8 +312,8 @@ export type LinkUncheckedUpdateInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   target?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.SectionItemLinkUncheckedUpdateManyWithoutLinkNestedInput
 }
 
@@ -322,16 +322,16 @@ export type LinkCreateManyInput = {
   type: string
   url: string
   target?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type LinkUpdateManyMutationInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   target?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type LinkUncheckedUpdateManyInput = {
@@ -339,8 +339,8 @@ export type LinkUncheckedUpdateManyInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   target?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type LinkCountOrderByAggregateInput = {
@@ -348,8 +348,8 @@ export type LinkCountOrderByAggregateInput = {
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   target?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type LinkAvgOrderByAggregateInput = {
@@ -361,8 +361,8 @@ export type LinkMaxOrderByAggregateInput = {
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   target?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type LinkMinOrderByAggregateInput = {
@@ -370,8 +370,8 @@ export type LinkMinOrderByAggregateInput = {
   type?: Prisma.SortOrder
   url?: Prisma.SortOrder
   target?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type LinkSumOrderByAggregateInput = {
@@ -401,8 +401,8 @@ export type LinkCreateWithoutItemsInput = {
   type: string
   url: string
   target?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type LinkUncheckedCreateWithoutItemsInput = {
@@ -410,8 +410,8 @@ export type LinkUncheckedCreateWithoutItemsInput = {
   type: string
   url: string
   target?: string
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type LinkCreateOrConnectWithoutItemsInput = {
@@ -434,8 +434,8 @@ export type LinkUpdateWithoutItemsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   target?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type LinkUncheckedUpdateWithoutItemsInput = {
@@ -443,8 +443,8 @@ export type LinkUncheckedUpdateWithoutItemsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   target?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -483,8 +483,8 @@ export type LinkSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   type?: boolean
   url?: boolean
   target?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
   items?: boolean | Prisma.Link$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.LinkCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["link"]>
@@ -494,8 +494,8 @@ export type LinkSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   type?: boolean
   url?: boolean
   target?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["link"]>
 
 export type LinkSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -503,8 +503,8 @@ export type LinkSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   type?: boolean
   url?: boolean
   target?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["link"]>
 
 export type LinkSelectScalar = {
@@ -512,11 +512,11 @@ export type LinkSelectScalar = {
   type?: boolean
   url?: boolean
   target?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type LinkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "type" | "url" | "target" | "created_at" | "updated_at", ExtArgs["result"]["link"]>
+export type LinkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "type" | "url" | "target" | "createdAt" | "updatedAt", ExtArgs["result"]["link"]>
 export type LinkInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   items?: boolean | Prisma.Link$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.LinkCountOutputTypeDefaultArgs<ExtArgs>
@@ -534,8 +534,8 @@ export type $LinkPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     type: string
     url: string
     target: string
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["link"]>
   composites: {}
 }
@@ -964,8 +964,8 @@ export interface LinkFieldRefs {
   readonly type: Prisma.FieldRef<"Link", 'String'>
   readonly url: Prisma.FieldRef<"Link", 'String'>
   readonly target: Prisma.FieldRef<"Link", 'String'>
-  readonly created_at: Prisma.FieldRef<"Link", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"Link", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"Link", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Link", 'DateTime'>
 }
     
 

@@ -41,24 +41,24 @@ export type ModalMinAggregateOutputType = {
   id: number | null
   code: string | null
   published: boolean | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type ModalMaxAggregateOutputType = {
   id: number | null
   code: string | null
   published: boolean | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type ModalCountAggregateOutputType = {
   id: number
   code: number
   published: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -75,24 +75,24 @@ export type ModalMinAggregateInputType = {
   id?: true
   code?: true
   published?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type ModalMaxAggregateInputType = {
   id?: true
   code?: true
   published?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type ModalCountAggregateInputType = {
   id?: true
   code?: true
   published?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -186,8 +186,8 @@ export type ModalGroupByOutputType = {
   id: number
   code: string
   published: boolean
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: ModalCountAggregateOutputType | null
   _avg: ModalAvgAggregateOutputType | null
   _sum: ModalSumAggregateOutputType | null
@@ -217,8 +217,8 @@ export type ModalWhereInput = {
   id?: Prisma.IntFilter<"Modal"> | number
   code?: Prisma.StringFilter<"Modal"> | string
   published?: Prisma.BoolFilter<"Modal"> | boolean
-  created_at?: Prisma.DateTimeFilter<"Modal"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"Modal"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"Modal"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Modal"> | Date | string
   translations?: Prisma.ModalTranslationListRelationFilter
   media?: Prisma.ModalMediaListRelationFilter
   items?: Prisma.SectionItemModalListRelationFilter
@@ -228,8 +228,8 @@ export type ModalOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   code?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   translations?: Prisma.ModalTranslationOrderByRelationAggregateInput
   media?: Prisma.ModalMediaOrderByRelationAggregateInput
   items?: Prisma.SectionItemModalOrderByRelationAggregateInput
@@ -242,8 +242,8 @@ export type ModalWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.ModalWhereInput[]
   NOT?: Prisma.ModalWhereInput | Prisma.ModalWhereInput[]
   published?: Prisma.BoolFilter<"Modal"> | boolean
-  created_at?: Prisma.DateTimeFilter<"Modal"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"Modal"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"Modal"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Modal"> | Date | string
   translations?: Prisma.ModalTranslationListRelationFilter
   media?: Prisma.ModalMediaListRelationFilter
   items?: Prisma.SectionItemModalListRelationFilter
@@ -253,8 +253,8 @@ export type ModalOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   code?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.ModalCountOrderByAggregateInput
   _avg?: Prisma.ModalAvgOrderByAggregateInput
   _max?: Prisma.ModalMaxOrderByAggregateInput
@@ -269,15 +269,15 @@ export type ModalScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Modal"> | number
   code?: Prisma.StringWithAggregatesFilter<"Modal"> | string
   published?: Prisma.BoolWithAggregatesFilter<"Modal"> | boolean
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"Modal"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"Modal"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Modal"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Modal"> | Date | string
 }
 
 export type ModalCreateInput = {
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.ModalTranslationCreateNestedManyWithoutModalInput
   media?: Prisma.ModalMediaCreateNestedManyWithoutModalInput
   items?: Prisma.SectionItemModalCreateNestedManyWithoutModalInput
@@ -287,8 +287,8 @@ export type ModalUncheckedCreateInput = {
   id?: number
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.ModalTranslationUncheckedCreateNestedManyWithoutModalInput
   media?: Prisma.ModalMediaUncheckedCreateNestedManyWithoutModalInput
   items?: Prisma.SectionItemModalUncheckedCreateNestedManyWithoutModalInput
@@ -297,8 +297,8 @@ export type ModalUncheckedCreateInput = {
 export type ModalUpdateInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ModalTranslationUpdateManyWithoutModalNestedInput
   media?: Prisma.ModalMediaUpdateManyWithoutModalNestedInput
   items?: Prisma.SectionItemModalUpdateManyWithoutModalNestedInput
@@ -308,8 +308,8 @@ export type ModalUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ModalTranslationUncheckedUpdateManyWithoutModalNestedInput
   media?: Prisma.ModalMediaUncheckedUpdateManyWithoutModalNestedInput
   items?: Prisma.SectionItemModalUncheckedUpdateManyWithoutModalNestedInput
@@ -319,31 +319,31 @@ export type ModalCreateManyInput = {
   id?: number
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type ModalUpdateManyMutationInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ModalUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ModalCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   code?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type ModalAvgOrderByAggregateInput = {
@@ -354,16 +354,16 @@ export type ModalMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   code?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type ModalMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   code?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type ModalSumOrderByAggregateInput = {
@@ -420,8 +420,8 @@ export type ModalUpdateOneRequiredWithoutItemsNestedInput = {
 export type ModalCreateWithoutTranslationsInput = {
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   media?: Prisma.ModalMediaCreateNestedManyWithoutModalInput
   items?: Prisma.SectionItemModalCreateNestedManyWithoutModalInput
 }
@@ -430,8 +430,8 @@ export type ModalUncheckedCreateWithoutTranslationsInput = {
   id?: number
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   media?: Prisma.ModalMediaUncheckedCreateNestedManyWithoutModalInput
   items?: Prisma.SectionItemModalUncheckedCreateNestedManyWithoutModalInput
 }
@@ -455,8 +455,8 @@ export type ModalUpdateToOneWithWhereWithoutTranslationsInput = {
 export type ModalUpdateWithoutTranslationsInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   media?: Prisma.ModalMediaUpdateManyWithoutModalNestedInput
   items?: Prisma.SectionItemModalUpdateManyWithoutModalNestedInput
 }
@@ -465,8 +465,8 @@ export type ModalUncheckedUpdateWithoutTranslationsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   media?: Prisma.ModalMediaUncheckedUpdateManyWithoutModalNestedInput
   items?: Prisma.SectionItemModalUncheckedUpdateManyWithoutModalNestedInput
 }
@@ -474,8 +474,8 @@ export type ModalUncheckedUpdateWithoutTranslationsInput = {
 export type ModalCreateWithoutMediaInput = {
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.ModalTranslationCreateNestedManyWithoutModalInput
   items?: Prisma.SectionItemModalCreateNestedManyWithoutModalInput
 }
@@ -484,8 +484,8 @@ export type ModalUncheckedCreateWithoutMediaInput = {
   id?: number
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.ModalTranslationUncheckedCreateNestedManyWithoutModalInput
   items?: Prisma.SectionItemModalUncheckedCreateNestedManyWithoutModalInput
 }
@@ -509,8 +509,8 @@ export type ModalUpdateToOneWithWhereWithoutMediaInput = {
 export type ModalUpdateWithoutMediaInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ModalTranslationUpdateManyWithoutModalNestedInput
   items?: Prisma.SectionItemModalUpdateManyWithoutModalNestedInput
 }
@@ -519,8 +519,8 @@ export type ModalUncheckedUpdateWithoutMediaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ModalTranslationUncheckedUpdateManyWithoutModalNestedInput
   items?: Prisma.SectionItemModalUncheckedUpdateManyWithoutModalNestedInput
 }
@@ -528,8 +528,8 @@ export type ModalUncheckedUpdateWithoutMediaInput = {
 export type ModalCreateWithoutItemsInput = {
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.ModalTranslationCreateNestedManyWithoutModalInput
   media?: Prisma.ModalMediaCreateNestedManyWithoutModalInput
 }
@@ -538,8 +538,8 @@ export type ModalUncheckedCreateWithoutItemsInput = {
   id?: number
   code: string
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.ModalTranslationUncheckedCreateNestedManyWithoutModalInput
   media?: Prisma.ModalMediaUncheckedCreateNestedManyWithoutModalInput
 }
@@ -563,8 +563,8 @@ export type ModalUpdateToOneWithWhereWithoutItemsInput = {
 export type ModalUpdateWithoutItemsInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ModalTranslationUpdateManyWithoutModalNestedInput
   media?: Prisma.ModalMediaUpdateManyWithoutModalNestedInput
 }
@@ -573,8 +573,8 @@ export type ModalUncheckedUpdateWithoutItemsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   code?: Prisma.StringFieldUpdateOperationsInput | string
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.ModalTranslationUncheckedUpdateManyWithoutModalNestedInput
   media?: Prisma.ModalMediaUncheckedUpdateManyWithoutModalNestedInput
 }
@@ -632,8 +632,8 @@ export type ModalSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   id?: boolean
   code?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
   translations?: boolean | Prisma.Modal$translationsArgs<ExtArgs>
   media?: boolean | Prisma.Modal$mediaArgs<ExtArgs>
   items?: boolean | Prisma.Modal$itemsArgs<ExtArgs>
@@ -644,27 +644,27 @@ export type ModalSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   code?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["modal"]>
 
 export type ModalSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   code?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["modal"]>
 
 export type ModalSelectScalar = {
   id?: boolean
   code?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type ModalOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "code" | "published" | "created_at" | "updated_at", ExtArgs["result"]["modal"]>
+export type ModalOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "code" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["modal"]>
 export type ModalInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | Prisma.Modal$translationsArgs<ExtArgs>
   media?: boolean | Prisma.Modal$mediaArgs<ExtArgs>
@@ -685,8 +685,8 @@ export type $ModalPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     id: number
     code: string
     published: boolean
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["modal"]>
   composites: {}
 }
@@ -1116,8 +1116,8 @@ export interface ModalFieldRefs {
   readonly id: Prisma.FieldRef<"Modal", 'Int'>
   readonly code: Prisma.FieldRef<"Modal", 'String'>
   readonly published: Prisma.FieldRef<"Modal", 'Boolean'>
-  readonly created_at: Prisma.FieldRef<"Modal", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"Modal", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"Modal", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Modal", 'DateTime'>
 }
     
 

@@ -286,7 +286,7 @@ export type SectionItemMediaCreateInput = {
   role?: string | null
   position?: number | null
   item: Prisma.SectionItemCreateNestedOneWithoutMediaInput
-  media: Prisma.MediaCreateNestedOneWithoutSectionItemMediaInput
+  media: Prisma.MediaCreateNestedOneWithoutSectionItemMediasInput
 }
 
 export type SectionItemMediaUncheckedCreateInput = {
@@ -301,7 +301,7 @@ export type SectionItemMediaUpdateInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   item?: Prisma.SectionItemUpdateOneRequiredWithoutMediaNestedInput
-  media?: Prisma.MediaUpdateOneRequiredWithoutSectionItemMediaNestedInput
+  media?: Prisma.MediaUpdateOneRequiredWithoutSectionItemMediasNestedInput
 }
 
 export type SectionItemMediaUncheckedUpdateInput = {
@@ -381,48 +381,6 @@ export type SectionItemMediaSumOrderByAggregateInput = {
   position?: Prisma.SortOrder
 }
 
-export type SectionItemMediaCreateNestedManyWithoutMediaInput = {
-  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
-  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
-  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-}
-
-export type SectionItemMediaUncheckedCreateNestedManyWithoutMediaInput = {
-  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
-  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
-  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-}
-
-export type SectionItemMediaUpdateManyWithoutMediaNestedInput = {
-  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
-  upsert?: Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput[]
-  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
-  set?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  disconnect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  delete?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  update?: Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput[]
-  updateMany?: Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput | Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput[]
-  deleteMany?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
-}
-
-export type SectionItemMediaUncheckedUpdateManyWithoutMediaNestedInput = {
-  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
-  upsert?: Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput[]
-  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
-  set?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  disconnect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  delete?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
-  update?: Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput[]
-  updateMany?: Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput | Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput[]
-  deleteMany?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
-}
-
 export type SectionItemMediaCreateNestedManyWithoutItemInput = {
   create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutItemInput, Prisma.SectionItemMediaUncheckedCreateWithoutItemInput> | Prisma.SectionItemMediaCreateWithoutItemInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutItemInput[]
   connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutItemInput | Prisma.SectionItemMediaCreateOrConnectWithoutItemInput[]
@@ -465,6 +423,98 @@ export type SectionItemMediaUncheckedUpdateManyWithoutItemNestedInput = {
   deleteMany?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
 }
 
+export type SectionItemMediaCreateNestedManyWithoutMediaInput = {
+  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
+  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
+  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+}
+
+export type SectionItemMediaUncheckedCreateNestedManyWithoutMediaInput = {
+  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
+  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
+  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+}
+
+export type SectionItemMediaUpdateManyWithoutMediaNestedInput = {
+  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
+  upsert?: Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput[]
+  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
+  set?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  disconnect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  delete?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  update?: Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput[]
+  updateMany?: Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput | Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput[]
+  deleteMany?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
+}
+
+export type SectionItemMediaUncheckedUpdateManyWithoutMediaNestedInput = {
+  create?: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutMediaInput, Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput> | Prisma.SectionItemMediaCreateWithoutMediaInput[] | Prisma.SectionItemMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput | Prisma.SectionItemMediaCreateOrConnectWithoutMediaInput[]
+  upsert?: Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpsertWithWhereUniqueWithoutMediaInput[]
+  createMany?: Prisma.SectionItemMediaCreateManyMediaInputEnvelope
+  set?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  disconnect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  delete?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  connect?: Prisma.SectionItemMediaWhereUniqueInput | Prisma.SectionItemMediaWhereUniqueInput[]
+  update?: Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.SectionItemMediaUpdateWithWhereUniqueWithoutMediaInput[]
+  updateMany?: Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput | Prisma.SectionItemMediaUpdateManyWithWhereWithoutMediaInput[]
+  deleteMany?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
+}
+
+export type SectionItemMediaCreateWithoutItemInput = {
+  role?: string | null
+  position?: number | null
+  media: Prisma.MediaCreateNestedOneWithoutSectionItemMediasInput
+}
+
+export type SectionItemMediaUncheckedCreateWithoutItemInput = {
+  id?: number
+  media_id: number
+  role?: string | null
+  position?: number | null
+}
+
+export type SectionItemMediaCreateOrConnectWithoutItemInput = {
+  where: Prisma.SectionItemMediaWhereUniqueInput
+  create: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutItemInput, Prisma.SectionItemMediaUncheckedCreateWithoutItemInput>
+}
+
+export type SectionItemMediaCreateManyItemInputEnvelope = {
+  data: Prisma.SectionItemMediaCreateManyItemInput | Prisma.SectionItemMediaCreateManyItemInput[]
+  skipDuplicates?: boolean
+}
+
+export type SectionItemMediaUpsertWithWhereUniqueWithoutItemInput = {
+  where: Prisma.SectionItemMediaWhereUniqueInput
+  update: Prisma.XOR<Prisma.SectionItemMediaUpdateWithoutItemInput, Prisma.SectionItemMediaUncheckedUpdateWithoutItemInput>
+  create: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutItemInput, Prisma.SectionItemMediaUncheckedCreateWithoutItemInput>
+}
+
+export type SectionItemMediaUpdateWithWhereUniqueWithoutItemInput = {
+  where: Prisma.SectionItemMediaWhereUniqueInput
+  data: Prisma.XOR<Prisma.SectionItemMediaUpdateWithoutItemInput, Prisma.SectionItemMediaUncheckedUpdateWithoutItemInput>
+}
+
+export type SectionItemMediaUpdateManyWithWhereWithoutItemInput = {
+  where: Prisma.SectionItemMediaScalarWhereInput
+  data: Prisma.XOR<Prisma.SectionItemMediaUpdateManyMutationInput, Prisma.SectionItemMediaUncheckedUpdateManyWithoutItemInput>
+}
+
+export type SectionItemMediaScalarWhereInput = {
+  AND?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
+  OR?: Prisma.SectionItemMediaScalarWhereInput[]
+  NOT?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
+  id?: Prisma.IntFilter<"SectionItemMedia"> | number
+  section_item_id?: Prisma.IntFilter<"SectionItemMedia"> | number
+  media_id?: Prisma.IntFilter<"SectionItemMedia"> | number
+  role?: Prisma.StringNullableFilter<"SectionItemMedia"> | string | null
+  position?: Prisma.IntNullableFilter<"SectionItemMedia"> | number | null
+}
+
 export type SectionItemMediaCreateWithoutMediaInput = {
   role?: string | null
   position?: number | null
@@ -504,54 +554,31 @@ export type SectionItemMediaUpdateManyWithWhereWithoutMediaInput = {
   data: Prisma.XOR<Prisma.SectionItemMediaUpdateManyMutationInput, Prisma.SectionItemMediaUncheckedUpdateManyWithoutMediaInput>
 }
 
-export type SectionItemMediaScalarWhereInput = {
-  AND?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
-  OR?: Prisma.SectionItemMediaScalarWhereInput[]
-  NOT?: Prisma.SectionItemMediaScalarWhereInput | Prisma.SectionItemMediaScalarWhereInput[]
-  id?: Prisma.IntFilter<"SectionItemMedia"> | number
-  section_item_id?: Prisma.IntFilter<"SectionItemMedia"> | number
-  media_id?: Prisma.IntFilter<"SectionItemMedia"> | number
-  role?: Prisma.StringNullableFilter<"SectionItemMedia"> | string | null
-  position?: Prisma.IntNullableFilter<"SectionItemMedia"> | number | null
-}
-
-export type SectionItemMediaCreateWithoutItemInput = {
-  role?: string | null
-  position?: number | null
-  media: Prisma.MediaCreateNestedOneWithoutSectionItemMediaInput
-}
-
-export type SectionItemMediaUncheckedCreateWithoutItemInput = {
+export type SectionItemMediaCreateManyItemInput = {
   id?: number
   media_id: number
   role?: string | null
   position?: number | null
 }
 
-export type SectionItemMediaCreateOrConnectWithoutItemInput = {
-  where: Prisma.SectionItemMediaWhereUniqueInput
-  create: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutItemInput, Prisma.SectionItemMediaUncheckedCreateWithoutItemInput>
+export type SectionItemMediaUpdateWithoutItemInput = {
+  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  media?: Prisma.MediaUpdateOneRequiredWithoutSectionItemMediasNestedInput
 }
 
-export type SectionItemMediaCreateManyItemInputEnvelope = {
-  data: Prisma.SectionItemMediaCreateManyItemInput | Prisma.SectionItemMediaCreateManyItemInput[]
-  skipDuplicates?: boolean
+export type SectionItemMediaUncheckedUpdateWithoutItemInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  media_id?: Prisma.IntFieldUpdateOperationsInput | number
+  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
-export type SectionItemMediaUpsertWithWhereUniqueWithoutItemInput = {
-  where: Prisma.SectionItemMediaWhereUniqueInput
-  update: Prisma.XOR<Prisma.SectionItemMediaUpdateWithoutItemInput, Prisma.SectionItemMediaUncheckedUpdateWithoutItemInput>
-  create: Prisma.XOR<Prisma.SectionItemMediaCreateWithoutItemInput, Prisma.SectionItemMediaUncheckedCreateWithoutItemInput>
-}
-
-export type SectionItemMediaUpdateWithWhereUniqueWithoutItemInput = {
-  where: Prisma.SectionItemMediaWhereUniqueInput
-  data: Prisma.XOR<Prisma.SectionItemMediaUpdateWithoutItemInput, Prisma.SectionItemMediaUncheckedUpdateWithoutItemInput>
-}
-
-export type SectionItemMediaUpdateManyWithWhereWithoutItemInput = {
-  where: Prisma.SectionItemMediaScalarWhereInput
-  data: Prisma.XOR<Prisma.SectionItemMediaUpdateManyMutationInput, Prisma.SectionItemMediaUncheckedUpdateManyWithoutItemInput>
+export type SectionItemMediaUncheckedUpdateManyWithoutItemInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  media_id?: Prisma.IntFieldUpdateOperationsInput | number
+  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type SectionItemMediaCreateManyMediaInput = {
@@ -577,33 +604,6 @@ export type SectionItemMediaUncheckedUpdateWithoutMediaInput = {
 export type SectionItemMediaUncheckedUpdateManyWithoutMediaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   section_item_id?: Prisma.IntFieldUpdateOperationsInput | number
-  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-}
-
-export type SectionItemMediaCreateManyItemInput = {
-  id?: number
-  media_id: number
-  role?: string | null
-  position?: number | null
-}
-
-export type SectionItemMediaUpdateWithoutItemInput = {
-  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  media?: Prisma.MediaUpdateOneRequiredWithoutSectionItemMediaNestedInput
-}
-
-export type SectionItemMediaUncheckedUpdateWithoutItemInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  media_id?: Prisma.IntFieldUpdateOperationsInput | number
-  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-}
-
-export type SectionItemMediaUncheckedUpdateManyWithoutItemInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  media_id?: Prisma.IntFieldUpdateOperationsInput | number
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }

@@ -18,14 +18,6 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
- * Model UserAccount
- * *
- *  * =========================
- *  * USERS (ADMIN)
- *  * =========================
- */
-export type UserAccount = Prisma.UserAccountModel
-/**
  * Model Language
  * *
  *  * =========================
@@ -33,14 +25,6 @@ export type UserAccount = Prisma.UserAccountModel
  *  * =========================
  */
 export type Language = Prisma.LanguageModel
-/**
- * Model Media
- * *
- *  * =========================
- *  * MEDIA
- *  * =========================
- */
-export type Media = Prisma.MediaModel
 /**
  * Model SiteSetting
  * *
@@ -193,3 +177,28 @@ export type Address = Prisma.AddressModel
  *  * =========================
  */
 export type Phone = Prisma.PhoneModel
+/**
+ * Model UserAccount
+ * 
+ */
+export type UserAccount = Prisma.UserAccountModel
+/**
+ * Model Content
+ * 
+ */
+export type Content = Prisma.ContentModel
+/**
+ * Model Media
+ * 
+ */
+export type Media = Prisma.MediaModel
+/**
+ * Model Menu
+ * 
+ */
+export type Menu = Prisma.MenuModel
+/**
+ * Model MenuItem
+ * 
+ */
+export type MenuItem = Prisma.MenuItemModel

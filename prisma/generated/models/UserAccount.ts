@@ -14,10 +14,7 @@ import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
  * Model UserAccount
- * *
- *  * =========================
- *  * USERS (ADMIN)
- *  * =========================
+ * 
  */
 export type UserAccountModel = runtime.Types.Result.DefaultSelection<Prisma.$UserAccountPayload>
 
@@ -43,8 +40,8 @@ export type UserAccountMinAggregateOutputType = {
   password_hash: string | null
   role: string | null
   is_active: boolean | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type UserAccountMaxAggregateOutputType = {
@@ -53,8 +50,8 @@ export type UserAccountMaxAggregateOutputType = {
   password_hash: string | null
   role: string | null
   is_active: boolean | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type UserAccountCountAggregateOutputType = {
@@ -63,8 +60,8 @@ export type UserAccountCountAggregateOutputType = {
   password_hash: number
   role: number
   is_active: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -83,8 +80,8 @@ export type UserAccountMinAggregateInputType = {
   password_hash?: true
   role?: true
   is_active?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type UserAccountMaxAggregateInputType = {
@@ -93,8 +90,8 @@ export type UserAccountMaxAggregateInputType = {
   password_hash?: true
   role?: true
   is_active?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type UserAccountCountAggregateInputType = {
@@ -103,8 +100,8 @@ export type UserAccountCountAggregateInputType = {
   password_hash?: true
   role?: true
   is_active?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -200,8 +197,8 @@ export type UserAccountGroupByOutputType = {
   password_hash: string
   role: string
   is_active: boolean
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: UserAccountCountAggregateOutputType | null
   _avg: UserAccountAvgAggregateOutputType | null
   _sum: UserAccountSumAggregateOutputType | null
@@ -233,8 +230,10 @@ export type UserAccountWhereInput = {
   password_hash?: Prisma.StringFilter<"UserAccount"> | string
   role?: Prisma.StringFilter<"UserAccount"> | string
   is_active?: Prisma.BoolFilter<"UserAccount"> | boolean
-  created_at?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
+  contents?: Prisma.ContentListRelationFilter
+  medias?: Prisma.MediaListRelationFilter
 }
 
 export type UserAccountOrderByWithRelationInput = {
@@ -243,8 +242,10 @@ export type UserAccountOrderByWithRelationInput = {
   password_hash?: Prisma.SortOrder
   role?: Prisma.SortOrder
   is_active?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  contents?: Prisma.ContentOrderByRelationAggregateInput
+  medias?: Prisma.MediaOrderByRelationAggregateInput
 }
 
 export type UserAccountWhereUniqueInput = Prisma.AtLeast<{
@@ -256,8 +257,10 @@ export type UserAccountWhereUniqueInput = Prisma.AtLeast<{
   password_hash?: Prisma.StringFilter<"UserAccount"> | string
   role?: Prisma.StringFilter<"UserAccount"> | string
   is_active?: Prisma.BoolFilter<"UserAccount"> | boolean
-  created_at?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"UserAccount"> | Date | string
+  contents?: Prisma.ContentListRelationFilter
+  medias?: Prisma.MediaListRelationFilter
 }, "id" | "email">
 
 export type UserAccountOrderByWithAggregationInput = {
@@ -266,8 +269,8 @@ export type UserAccountOrderByWithAggregationInput = {
   password_hash?: Prisma.SortOrder
   role?: Prisma.SortOrder
   is_active?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.UserAccountCountOrderByAggregateInput
   _avg?: Prisma.UserAccountAvgOrderByAggregateInput
   _max?: Prisma.UserAccountMaxOrderByAggregateInput
@@ -284,8 +287,8 @@ export type UserAccountScalarWhereWithAggregatesInput = {
   password_hash?: Prisma.StringWithAggregatesFilter<"UserAccount"> | string
   role?: Prisma.StringWithAggregatesFilter<"UserAccount"> | string
   is_active?: Prisma.BoolWithAggregatesFilter<"UserAccount"> | boolean
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"UserAccount"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"UserAccount"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"UserAccount"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"UserAccount"> | Date | string
 }
 
 export type UserAccountCreateInput = {
@@ -293,8 +296,10 @@ export type UserAccountCreateInput = {
   password_hash: string
   role?: string
   is_active?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  contents?: Prisma.ContentCreateNestedManyWithoutAuthorInput
+  medias?: Prisma.MediaCreateNestedManyWithoutUploadedByInput
 }
 
 export type UserAccountUncheckedCreateInput = {
@@ -303,8 +308,10 @@ export type UserAccountUncheckedCreateInput = {
   password_hash: string
   role?: string
   is_active?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  contents?: Prisma.ContentUncheckedCreateNestedManyWithoutAuthorInput
+  medias?: Prisma.MediaUncheckedCreateNestedManyWithoutUploadedByInput
 }
 
 export type UserAccountUpdateInput = {
@@ -312,8 +319,10 @@ export type UserAccountUpdateInput = {
   password_hash?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  contents?: Prisma.ContentUpdateManyWithoutAuthorNestedInput
+  medias?: Prisma.MediaUpdateManyWithoutUploadedByNestedInput
 }
 
 export type UserAccountUncheckedUpdateInput = {
@@ -322,8 +331,10 @@ export type UserAccountUncheckedUpdateInput = {
   password_hash?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  contents?: Prisma.ContentUncheckedUpdateManyWithoutAuthorNestedInput
+  medias?: Prisma.MediaUncheckedUpdateManyWithoutUploadedByNestedInput
 }
 
 export type UserAccountCreateManyInput = {
@@ -332,8 +343,8 @@ export type UserAccountCreateManyInput = {
   password_hash: string
   role?: string
   is_active?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type UserAccountUpdateManyMutationInput = {
@@ -341,8 +352,8 @@ export type UserAccountUpdateManyMutationInput = {
   password_hash?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserAccountUncheckedUpdateManyInput = {
@@ -351,8 +362,8 @@ export type UserAccountUncheckedUpdateManyInput = {
   password_hash?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserAccountCountOrderByAggregateInput = {
@@ -361,8 +372,8 @@ export type UserAccountCountOrderByAggregateInput = {
   password_hash?: Prisma.SortOrder
   role?: Prisma.SortOrder
   is_active?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type UserAccountAvgOrderByAggregateInput = {
@@ -375,8 +386,8 @@ export type UserAccountMaxOrderByAggregateInput = {
   password_hash?: Prisma.SortOrder
   role?: Prisma.SortOrder
   is_active?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type UserAccountMinOrderByAggregateInput = {
@@ -385,34 +396,205 @@ export type UserAccountMinOrderByAggregateInput = {
   password_hash?: Prisma.SortOrder
   role?: Prisma.SortOrder
   is_active?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type UserAccountSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
+export type UserAccountNullableScalarRelationFilter = {
+  is?: Prisma.UserAccountWhereInput | null
+  isNot?: Prisma.UserAccountWhereInput | null
 }
 
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
+export type UserAccountCreateNestedOneWithoutContentsInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutContentsInput, Prisma.UserAccountUncheckedCreateWithoutContentsInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutContentsInput
+  connect?: Prisma.UserAccountWhereUniqueInput
 }
 
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
+export type UserAccountUpdateOneWithoutContentsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutContentsInput, Prisma.UserAccountUncheckedCreateWithoutContentsInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutContentsInput
+  upsert?: Prisma.UserAccountUpsertWithoutContentsInput
+  disconnect?: Prisma.UserAccountWhereInput | boolean
+  delete?: Prisma.UserAccountWhereInput | boolean
+  connect?: Prisma.UserAccountWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserAccountUpdateToOneWithWhereWithoutContentsInput, Prisma.UserAccountUpdateWithoutContentsInput>, Prisma.UserAccountUncheckedUpdateWithoutContentsInput>
 }
 
-export type IntFieldUpdateOperationsInput = {
-  set?: number
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
+export type UserAccountCreateNestedOneWithoutMediasInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutMediasInput, Prisma.UserAccountUncheckedCreateWithoutMediasInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutMediasInput
+  connect?: Prisma.UserAccountWhereUniqueInput
 }
 
+export type UserAccountUpdateOneWithoutMediasNestedInput = {
+  create?: Prisma.XOR<Prisma.UserAccountCreateWithoutMediasInput, Prisma.UserAccountUncheckedCreateWithoutMediasInput>
+  connectOrCreate?: Prisma.UserAccountCreateOrConnectWithoutMediasInput
+  upsert?: Prisma.UserAccountUpsertWithoutMediasInput
+  disconnect?: Prisma.UserAccountWhereInput | boolean
+  delete?: Prisma.UserAccountWhereInput | boolean
+  connect?: Prisma.UserAccountWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserAccountUpdateToOneWithWhereWithoutMediasInput, Prisma.UserAccountUpdateWithoutMediasInput>, Prisma.UserAccountUncheckedUpdateWithoutMediasInput>
+}
+
+export type UserAccountCreateWithoutContentsInput = {
+  email: string
+  password_hash: string
+  role?: string
+  is_active?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  medias?: Prisma.MediaCreateNestedManyWithoutUploadedByInput
+}
+
+export type UserAccountUncheckedCreateWithoutContentsInput = {
+  id?: number
+  email: string
+  password_hash: string
+  role?: string
+  is_active?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  medias?: Prisma.MediaUncheckedCreateNestedManyWithoutUploadedByInput
+}
+
+export type UserAccountCreateOrConnectWithoutContentsInput = {
+  where: Prisma.UserAccountWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutContentsInput, Prisma.UserAccountUncheckedCreateWithoutContentsInput>
+}
+
+export type UserAccountUpsertWithoutContentsInput = {
+  update: Prisma.XOR<Prisma.UserAccountUpdateWithoutContentsInput, Prisma.UserAccountUncheckedUpdateWithoutContentsInput>
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutContentsInput, Prisma.UserAccountUncheckedCreateWithoutContentsInput>
+  where?: Prisma.UserAccountWhereInput
+}
+
+export type UserAccountUpdateToOneWithWhereWithoutContentsInput = {
+  where?: Prisma.UserAccountWhereInput
+  data: Prisma.XOR<Prisma.UserAccountUpdateWithoutContentsInput, Prisma.UserAccountUncheckedUpdateWithoutContentsInput>
+}
+
+export type UserAccountUpdateWithoutContentsInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password_hash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.StringFieldUpdateOperationsInput | string
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  medias?: Prisma.MediaUpdateManyWithoutUploadedByNestedInput
+}
+
+export type UserAccountUncheckedUpdateWithoutContentsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password_hash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.StringFieldUpdateOperationsInput | string
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  medias?: Prisma.MediaUncheckedUpdateManyWithoutUploadedByNestedInput
+}
+
+export type UserAccountCreateWithoutMediasInput = {
+  email: string
+  password_hash: string
+  role?: string
+  is_active?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  contents?: Prisma.ContentCreateNestedManyWithoutAuthorInput
+}
+
+export type UserAccountUncheckedCreateWithoutMediasInput = {
+  id?: number
+  email: string
+  password_hash: string
+  role?: string
+  is_active?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  contents?: Prisma.ContentUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserAccountCreateOrConnectWithoutMediasInput = {
+  where: Prisma.UserAccountWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutMediasInput, Prisma.UserAccountUncheckedCreateWithoutMediasInput>
+}
+
+export type UserAccountUpsertWithoutMediasInput = {
+  update: Prisma.XOR<Prisma.UserAccountUpdateWithoutMediasInput, Prisma.UserAccountUncheckedUpdateWithoutMediasInput>
+  create: Prisma.XOR<Prisma.UserAccountCreateWithoutMediasInput, Prisma.UserAccountUncheckedCreateWithoutMediasInput>
+  where?: Prisma.UserAccountWhereInput
+}
+
+export type UserAccountUpdateToOneWithWhereWithoutMediasInput = {
+  where?: Prisma.UserAccountWhereInput
+  data: Prisma.XOR<Prisma.UserAccountUpdateWithoutMediasInput, Prisma.UserAccountUncheckedUpdateWithoutMediasInput>
+}
+
+export type UserAccountUpdateWithoutMediasInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password_hash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.StringFieldUpdateOperationsInput | string
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  contents?: Prisma.ContentUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserAccountUncheckedUpdateWithoutMediasInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password_hash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.StringFieldUpdateOperationsInput | string
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  contents?: Prisma.ContentUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+
+/**
+ * Count Type UserAccountCountOutputType
+ */
+
+export type UserAccountCountOutputType = {
+  contents: number
+  medias: number
+}
+
+export type UserAccountCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  contents?: boolean | UserAccountCountOutputTypeCountContentsArgs
+  medias?: boolean | UserAccountCountOutputTypeCountMediasArgs
+}
+
+/**
+ * UserAccountCountOutputType without action
+ */
+export type UserAccountCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserAccountCountOutputType
+   */
+  select?: Prisma.UserAccountCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * UserAccountCountOutputType without action
+ */
+export type UserAccountCountOutputTypeCountContentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ContentWhereInput
+}
+
+/**
+ * UserAccountCountOutputType without action
+ */
+export type UserAccountCountOutputTypeCountMediasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MediaWhereInput
+}
 
 
 export type UserAccountSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -421,8 +603,11 @@ export type UserAccountSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   password_hash?: boolean
   role?: boolean
   is_active?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  contents?: boolean | Prisma.UserAccount$contentsArgs<ExtArgs>
+  medias?: boolean | Prisma.UserAccount$mediasArgs<ExtArgs>
+  _count?: boolean | Prisma.UserAccountCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userAccount"]>
 
 export type UserAccountSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -431,8 +616,8 @@ export type UserAccountSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   password_hash?: boolean
   role?: boolean
   is_active?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["userAccount"]>
 
 export type UserAccountSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -441,8 +626,8 @@ export type UserAccountSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   password_hash?: boolean
   role?: boolean
   is_active?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["userAccount"]>
 
 export type UserAccountSelectScalar = {
@@ -451,23 +636,33 @@ export type UserAccountSelectScalar = {
   password_hash?: boolean
   role?: boolean
   is_active?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type UserAccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "password_hash" | "role" | "is_active" | "created_at" | "updated_at", ExtArgs["result"]["userAccount"]>
+export type UserAccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "password_hash" | "role" | "is_active" | "createdAt" | "updatedAt", ExtArgs["result"]["userAccount"]>
+export type UserAccountInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  contents?: boolean | Prisma.UserAccount$contentsArgs<ExtArgs>
+  medias?: boolean | Prisma.UserAccount$mediasArgs<ExtArgs>
+  _count?: boolean | Prisma.UserAccountCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type UserAccountIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type UserAccountIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
 export type $UserAccountPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "UserAccount"
-  objects: {}
+  objects: {
+    contents: Prisma.$ContentPayload<ExtArgs>[]
+    medias: Prisma.$MediaPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     email: string
     password_hash: string
     role: string
     is_active: boolean
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["userAccount"]>
   composites: {}
 }
@@ -862,6 +1057,8 @@ readonly fields: UserAccountFieldRefs;
  */
 export interface Prisma__UserAccountClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  contents<T extends Prisma.UserAccount$contentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$contentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ContentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  medias<T extends Prisma.UserAccount$mediasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserAccount$mediasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MediaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -896,8 +1093,8 @@ export interface UserAccountFieldRefs {
   readonly password_hash: Prisma.FieldRef<"UserAccount", 'String'>
   readonly role: Prisma.FieldRef<"UserAccount", 'String'>
   readonly is_active: Prisma.FieldRef<"UserAccount", 'Boolean'>
-  readonly created_at: Prisma.FieldRef<"UserAccount", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"UserAccount", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"UserAccount", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"UserAccount", 'DateTime'>
 }
     
 
@@ -914,6 +1111,10 @@ export type UserAccountFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.I
    * Omit specific fields from the UserAccount
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
   /**
    * Filter, which UserAccount to fetch.
    */
@@ -933,6 +1134,10 @@ export type UserAccountFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Exten
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
+  /**
    * Filter, which UserAccount to fetch.
    */
   where: Prisma.UserAccountWhereUniqueInput
@@ -950,6 +1155,10 @@ export type UserAccountFindFirstArgs<ExtArgs extends runtime.Types.Extensions.In
    * Omit specific fields from the UserAccount
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
   /**
    * Filter, which UserAccount to fetch.
    */
@@ -999,6 +1208,10 @@ export type UserAccountFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extens
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
+  /**
    * Filter, which UserAccount to fetch.
    */
   where?: Prisma.UserAccountWhereInput
@@ -1047,6 +1260,10 @@ export type UserAccountFindManyArgs<ExtArgs extends runtime.Types.Extensions.Int
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
+  /**
    * Filter, which UserAccounts to fetch.
    */
   where?: Prisma.UserAccountWhereInput
@@ -1089,6 +1306,10 @@ export type UserAccountCreateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Omit specific fields from the UserAccount
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
   /**
    * The data needed to create a UserAccount.
    */
@@ -1137,6 +1358,10 @@ export type UserAccountUpdateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Omit specific fields from the UserAccount
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
   /**
    * The data needed to update a UserAccount.
    */
@@ -1204,6 +1429,10 @@ export type UserAccountUpsertArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
+  /**
    * The filter to search for the UserAccount to update in case it exists.
    */
   where: Prisma.UserAccountWhereUniqueInput
@@ -1230,6 +1459,10 @@ export type UserAccountDeleteArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
+  /**
    * Filter which UserAccount to delete.
    */
   where: Prisma.UserAccountWhereUniqueInput
@@ -1250,6 +1483,54 @@ export type UserAccountDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.I
 }
 
 /**
+ * UserAccount.contents
+ */
+export type UserAccount$contentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Content
+   */
+  select?: Prisma.ContentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Content
+   */
+  omit?: Prisma.ContentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ContentInclude<ExtArgs> | null
+  where?: Prisma.ContentWhereInput
+  orderBy?: Prisma.ContentOrderByWithRelationInput | Prisma.ContentOrderByWithRelationInput[]
+  cursor?: Prisma.ContentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ContentScalarFieldEnum | Prisma.ContentScalarFieldEnum[]
+}
+
+/**
+ * UserAccount.medias
+ */
+export type UserAccount$mediasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Media
+   */
+  select?: Prisma.MediaSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Media
+   */
+  omit?: Prisma.MediaOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MediaInclude<ExtArgs> | null
+  where?: Prisma.MediaWhereInput
+  orderBy?: Prisma.MediaOrderByWithRelationInput | Prisma.MediaOrderByWithRelationInput[]
+  cursor?: Prisma.MediaWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MediaScalarFieldEnum | Prisma.MediaScalarFieldEnum[]
+}
+
+/**
  * UserAccount without action
  */
 export type UserAccountDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1261,4 +1542,8 @@ export type UserAccountDefaultArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Omit specific fields from the UserAccount
    */
   omit?: Prisma.UserAccountOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserAccountInclude<ExtArgs> | null
 }

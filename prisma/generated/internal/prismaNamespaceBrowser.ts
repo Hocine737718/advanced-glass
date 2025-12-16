@@ -51,9 +51,7 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  UserAccount: 'UserAccount',
   Language: 'Language',
-  Media: 'Media',
   SiteSetting: 'SiteSetting',
   SocialLink: 'SocialLink',
   Page: 'Page',
@@ -72,7 +70,12 @@ export const ModelName = {
   Person: 'Person',
   PersonTranslation: 'PersonTranslation',
   Address: 'Address',
-  Phone: 'Phone'
+  Phone: 'Phone',
+  UserAccount: 'UserAccount',
+  Content: 'Content',
+  Media: 'Media',
+  Menu: 'Menu',
+  MenuItem: 'MenuItem'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -91,19 +94,6 @@ export const TransactionIsolationLevel = {
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const UserAccountScalarFieldEnum = {
-  id: 'id',
-  email: 'email',
-  password_hash: 'password_hash',
-  role: 'role',
-  is_active: 'is_active',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type UserAccountScalarFieldEnum = (typeof UserAccountScalarFieldEnum)[keyof typeof UserAccountScalarFieldEnum]
-
-
 export const LanguageScalarFieldEnum = {
   code: 'code',
   name: 'name',
@@ -113,24 +103,12 @@ export const LanguageScalarFieldEnum = {
 export type LanguageScalarFieldEnum = (typeof LanguageScalarFieldEnum)[keyof typeof LanguageScalarFieldEnum]
 
 
-export const MediaScalarFieldEnum = {
-  id: 'id',
-  type: 'type',
-  file_path: 'file_path',
-  alt_text: 'alt_text',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type MediaScalarFieldEnum = (typeof MediaScalarFieldEnum)[keyof typeof MediaScalarFieldEnum]
-
-
 export const SiteSettingScalarFieldEnum = {
   id: 'id',
   key: 'key',
   value: 'value',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type SiteSettingScalarFieldEnum = (typeof SiteSettingScalarFieldEnum)[keyof typeof SiteSettingScalarFieldEnum]
@@ -141,8 +119,8 @@ export const SocialLinkScalarFieldEnum = {
   platform: 'platform',
   url: 'url',
   position: 'position',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type SocialLinkScalarFieldEnum = (typeof SocialLinkScalarFieldEnum)[keyof typeof SocialLinkScalarFieldEnum]
@@ -153,8 +131,8 @@ export const PageScalarFieldEnum = {
   slug: 'slug',
   published: 'published',
   position: 'position',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type PageScalarFieldEnum = (typeof PageScalarFieldEnum)[keyof typeof PageScalarFieldEnum]
@@ -178,8 +156,8 @@ export const SectionScalarFieldEnum = {
   type: 'type',
   position: 'position',
   published: 'published',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type SectionScalarFieldEnum = (typeof SectionScalarFieldEnum)[keyof typeof SectionScalarFieldEnum]
@@ -202,8 +180,8 @@ export const SectionItemScalarFieldEnum = {
   type: 'type',
   position: 'position',
   published: 'published',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type SectionItemScalarFieldEnum = (typeof SectionItemScalarFieldEnum)[keyof typeof SectionItemScalarFieldEnum]
@@ -236,8 +214,8 @@ export const LinkScalarFieldEnum = {
   type: 'type',
   url: 'url',
   target: 'target',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type LinkScalarFieldEnum = (typeof LinkScalarFieldEnum)[keyof typeof LinkScalarFieldEnum]
@@ -255,8 +233,8 @@ export const ModalScalarFieldEnum = {
   id: 'id',
   code: 'code',
   published: 'published',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type ModalScalarFieldEnum = (typeof ModalScalarFieldEnum)[keyof typeof ModalScalarFieldEnum]
@@ -296,8 +274,8 @@ export const PersonScalarFieldEnum = {
   role: 'role',
   email: 'email',
   published: 'published',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type PersonScalarFieldEnum = (typeof PersonScalarFieldEnum)[keyof typeof PersonScalarFieldEnum]
@@ -334,6 +312,84 @@ export const PhoneScalarFieldEnum = {
 } as const
 
 export type PhoneScalarFieldEnum = (typeof PhoneScalarFieldEnum)[keyof typeof PhoneScalarFieldEnum]
+
+
+export const UserAccountScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  password_hash: 'password_hash',
+  role: 'role',
+  is_active: 'is_active',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserAccountScalarFieldEnum = (typeof UserAccountScalarFieldEnum)[keyof typeof UserAccountScalarFieldEnum]
+
+
+export const ContentScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  content: 'content',
+  excerpt: 'excerpt',
+  type: 'type',
+  status: 'status',
+  language: 'language',
+  featured: 'featured',
+  order: 'order',
+  seoTitle: 'seoTitle',
+  seoDescription: 'seoDescription',
+  seoKeywords: 'seoKeywords',
+  authorId: 'authorId',
+  featuredImage: 'featuredImage',
+  publishedAt: 'publishedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ContentScalarFieldEnum = (typeof ContentScalarFieldEnum)[keyof typeof ContentScalarFieldEnum]
+
+
+export const MediaScalarFieldEnum = {
+  id: 'id',
+  filename: 'filename',
+  originalName: 'originalName',
+  path: 'path',
+  mimeType: 'mimeType',
+  size: 'size',
+  altText: 'altText',
+  caption: 'caption',
+  uploadedById: 'uploadedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MediaScalarFieldEnum = (typeof MediaScalarFieldEnum)[keyof typeof MediaScalarFieldEnum]
+
+
+export const MenuScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  location: 'location'
+} as const
+
+export type MenuScalarFieldEnum = (typeof MenuScalarFieldEnum)[keyof typeof MenuScalarFieldEnum]
+
+
+export const MenuItemScalarFieldEnum = {
+  id: 'id',
+  label: 'label',
+  url: 'url',
+  icon: 'icon',
+  order: 'order',
+  parentId: 'parentId',
+  isExternal: 'isExternal',
+  menuId: 'menuId',
+  createdAt: 'createdAt'
+} as const
+
+export type MenuItemScalarFieldEnum = (typeof MenuItemScalarFieldEnum)[keyof typeof MenuItemScalarFieldEnum]
 
 
 export const SortOrder = {

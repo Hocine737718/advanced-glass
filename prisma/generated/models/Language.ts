@@ -304,6 +304,14 @@ export type LanguageScalarRelationFilter = {
   isNot?: Prisma.LanguageWhereInput
 }
 
+export type StringFieldUpdateOperationsInput = {
+  set?: string
+}
+
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
+}
+
 export type LanguageCreateNestedOneWithoutPageTranslationsInput = {
   create?: Prisma.XOR<Prisma.LanguageCreateWithoutPageTranslationsInput, Prisma.LanguageUncheckedCreateWithoutPageTranslationsInput>
   connectOrCreate?: Prisma.LanguageCreateOrConnectWithoutPageTranslationsInput

@@ -42,8 +42,8 @@ export type PersonMinAggregateOutputType = {
   role: string | null
   email: string | null
   published: boolean | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type PersonMaxAggregateOutputType = {
@@ -51,8 +51,8 @@ export type PersonMaxAggregateOutputType = {
   role: string | null
   email: string | null
   published: boolean | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type PersonCountAggregateOutputType = {
@@ -60,8 +60,8 @@ export type PersonCountAggregateOutputType = {
   role: number
   email: number
   published: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -79,8 +79,8 @@ export type PersonMinAggregateInputType = {
   role?: true
   email?: true
   published?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type PersonMaxAggregateInputType = {
@@ -88,8 +88,8 @@ export type PersonMaxAggregateInputType = {
   role?: true
   email?: true
   published?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type PersonCountAggregateInputType = {
@@ -97,8 +97,8 @@ export type PersonCountAggregateInputType = {
   role?: true
   email?: true
   published?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -193,8 +193,8 @@ export type PersonGroupByOutputType = {
   role: string | null
   email: string | null
   published: boolean
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: PersonCountAggregateOutputType | null
   _avg: PersonAvgAggregateOutputType | null
   _sum: PersonSumAggregateOutputType | null
@@ -225,8 +225,8 @@ export type PersonWhereInput = {
   role?: Prisma.StringNullableFilter<"Person"> | string | null
   email?: Prisma.StringNullableFilter<"Person"> | string | null
   published?: Prisma.BoolFilter<"Person"> | boolean
-  created_at?: Prisma.DateTimeFilter<"Person"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"Person"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"Person"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Person"> | Date | string
   translations?: Prisma.PersonTranslationListRelationFilter
   addresses?: Prisma.AddressListRelationFilter
   phones?: Prisma.PhoneListRelationFilter
@@ -237,8 +237,8 @@ export type PersonOrderByWithRelationInput = {
   role?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   translations?: Prisma.PersonTranslationOrderByRelationAggregateInput
   addresses?: Prisma.AddressOrderByRelationAggregateInput
   phones?: Prisma.PhoneOrderByRelationAggregateInput
@@ -252,8 +252,8 @@ export type PersonWhereUniqueInput = Prisma.AtLeast<{
   role?: Prisma.StringNullableFilter<"Person"> | string | null
   email?: Prisma.StringNullableFilter<"Person"> | string | null
   published?: Prisma.BoolFilter<"Person"> | boolean
-  created_at?: Prisma.DateTimeFilter<"Person"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"Person"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"Person"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Person"> | Date | string
   translations?: Prisma.PersonTranslationListRelationFilter
   addresses?: Prisma.AddressListRelationFilter
   phones?: Prisma.PhoneListRelationFilter
@@ -264,8 +264,8 @@ export type PersonOrderByWithAggregationInput = {
   role?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.PersonCountOrderByAggregateInput
   _avg?: Prisma.PersonAvgOrderByAggregateInput
   _max?: Prisma.PersonMaxOrderByAggregateInput
@@ -281,16 +281,16 @@ export type PersonScalarWhereWithAggregatesInput = {
   role?: Prisma.StringNullableWithAggregatesFilter<"Person"> | string | null
   email?: Prisma.StringNullableWithAggregatesFilter<"Person"> | string | null
   published?: Prisma.BoolWithAggregatesFilter<"Person"> | boolean
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"Person"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"Person"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Person"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Person"> | Date | string
 }
 
 export type PersonCreateInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.PersonTranslationCreateNestedManyWithoutPersonInput
   addresses?: Prisma.AddressCreateNestedManyWithoutPersonInput
   phones?: Prisma.PhoneCreateNestedManyWithoutPersonInput
@@ -301,8 +301,8 @@ export type PersonUncheckedCreateInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.PersonTranslationUncheckedCreateNestedManyWithoutPersonInput
   addresses?: Prisma.AddressUncheckedCreateNestedManyWithoutPersonInput
   phones?: Prisma.PhoneUncheckedCreateNestedManyWithoutPersonInput
@@ -312,8 +312,8 @@ export type PersonUpdateInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.PersonTranslationUpdateManyWithoutPersonNestedInput
   addresses?: Prisma.AddressUpdateManyWithoutPersonNestedInput
   phones?: Prisma.PhoneUpdateManyWithoutPersonNestedInput
@@ -324,8 +324,8 @@ export type PersonUncheckedUpdateInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.PersonTranslationUncheckedUpdateManyWithoutPersonNestedInput
   addresses?: Prisma.AddressUncheckedUpdateManyWithoutPersonNestedInput
   phones?: Prisma.PhoneUncheckedUpdateManyWithoutPersonNestedInput
@@ -336,16 +336,16 @@ export type PersonCreateManyInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type PersonUpdateManyMutationInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type PersonUncheckedUpdateManyInput = {
@@ -353,8 +353,8 @@ export type PersonUncheckedUpdateManyInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type PersonCountOrderByAggregateInput = {
@@ -362,8 +362,8 @@ export type PersonCountOrderByAggregateInput = {
   role?: Prisma.SortOrder
   email?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type PersonAvgOrderByAggregateInput = {
@@ -375,8 +375,8 @@ export type PersonMaxOrderByAggregateInput = {
   role?: Prisma.SortOrder
   email?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type PersonMinOrderByAggregateInput = {
@@ -384,8 +384,8 @@ export type PersonMinOrderByAggregateInput = {
   role?: Prisma.SortOrder
   email?: Prisma.SortOrder
   published?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type PersonSumOrderByAggregateInput = {
@@ -443,8 +443,8 @@ export type PersonCreateWithoutTranslationsInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   addresses?: Prisma.AddressCreateNestedManyWithoutPersonInput
   phones?: Prisma.PhoneCreateNestedManyWithoutPersonInput
 }
@@ -454,8 +454,8 @@ export type PersonUncheckedCreateWithoutTranslationsInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   addresses?: Prisma.AddressUncheckedCreateNestedManyWithoutPersonInput
   phones?: Prisma.PhoneUncheckedCreateNestedManyWithoutPersonInput
 }
@@ -480,8 +480,8 @@ export type PersonUpdateWithoutTranslationsInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   addresses?: Prisma.AddressUpdateManyWithoutPersonNestedInput
   phones?: Prisma.PhoneUpdateManyWithoutPersonNestedInput
 }
@@ -491,8 +491,8 @@ export type PersonUncheckedUpdateWithoutTranslationsInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   addresses?: Prisma.AddressUncheckedUpdateManyWithoutPersonNestedInput
   phones?: Prisma.PhoneUncheckedUpdateManyWithoutPersonNestedInput
 }
@@ -501,8 +501,8 @@ export type PersonCreateWithoutAddressesInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.PersonTranslationCreateNestedManyWithoutPersonInput
   phones?: Prisma.PhoneCreateNestedManyWithoutPersonInput
 }
@@ -512,8 +512,8 @@ export type PersonUncheckedCreateWithoutAddressesInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.PersonTranslationUncheckedCreateNestedManyWithoutPersonInput
   phones?: Prisma.PhoneUncheckedCreateNestedManyWithoutPersonInput
 }
@@ -538,8 +538,8 @@ export type PersonUpdateWithoutAddressesInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.PersonTranslationUpdateManyWithoutPersonNestedInput
   phones?: Prisma.PhoneUpdateManyWithoutPersonNestedInput
 }
@@ -549,8 +549,8 @@ export type PersonUncheckedUpdateWithoutAddressesInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.PersonTranslationUncheckedUpdateManyWithoutPersonNestedInput
   phones?: Prisma.PhoneUncheckedUpdateManyWithoutPersonNestedInput
 }
@@ -559,8 +559,8 @@ export type PersonCreateWithoutPhonesInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.PersonTranslationCreateNestedManyWithoutPersonInput
   addresses?: Prisma.AddressCreateNestedManyWithoutPersonInput
 }
@@ -570,8 +570,8 @@ export type PersonUncheckedCreateWithoutPhonesInput = {
   role?: string | null
   email?: string | null
   published?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
   translations?: Prisma.PersonTranslationUncheckedCreateNestedManyWithoutPersonInput
   addresses?: Prisma.AddressUncheckedCreateNestedManyWithoutPersonInput
 }
@@ -596,8 +596,8 @@ export type PersonUpdateWithoutPhonesInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.PersonTranslationUpdateManyWithoutPersonNestedInput
   addresses?: Prisma.AddressUpdateManyWithoutPersonNestedInput
 }
@@ -607,8 +607,8 @@ export type PersonUncheckedUpdateWithoutPhonesInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.PersonTranslationUncheckedUpdateManyWithoutPersonNestedInput
   addresses?: Prisma.AddressUncheckedUpdateManyWithoutPersonNestedInput
 }
@@ -667,8 +667,8 @@ export type PersonSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   role?: boolean
   email?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
   translations?: boolean | Prisma.Person$translationsArgs<ExtArgs>
   addresses?: boolean | Prisma.Person$addressesArgs<ExtArgs>
   phones?: boolean | Prisma.Person$phonesArgs<ExtArgs>
@@ -680,8 +680,8 @@ export type PersonSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   role?: boolean
   email?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["person"]>
 
 export type PersonSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -689,8 +689,8 @@ export type PersonSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   role?: boolean
   email?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["person"]>
 
 export type PersonSelectScalar = {
@@ -698,11 +698,11 @@ export type PersonSelectScalar = {
   role?: boolean
   email?: boolean
   published?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type PersonOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "role" | "email" | "published" | "created_at" | "updated_at", ExtArgs["result"]["person"]>
+export type PersonOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "role" | "email" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["person"]>
 export type PersonInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | Prisma.Person$translationsArgs<ExtArgs>
   addresses?: boolean | Prisma.Person$addressesArgs<ExtArgs>
@@ -724,8 +724,8 @@ export type $PersonPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     role: string | null
     email: string | null
     published: boolean
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["person"]>
   composites: {}
 }
@@ -1156,8 +1156,8 @@ export interface PersonFieldRefs {
   readonly role: Prisma.FieldRef<"Person", 'String'>
   readonly email: Prisma.FieldRef<"Person", 'String'>
   readonly published: Prisma.FieldRef<"Person", 'Boolean'>
-  readonly created_at: Prisma.FieldRef<"Person", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"Person", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"Person", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Person", 'DateTime'>
 }
     
 

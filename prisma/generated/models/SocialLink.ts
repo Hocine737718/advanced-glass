@@ -44,8 +44,8 @@ export type SocialLinkMinAggregateOutputType = {
   platform: string | null
   url: string | null
   position: number | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type SocialLinkMaxAggregateOutputType = {
@@ -53,8 +53,8 @@ export type SocialLinkMaxAggregateOutputType = {
   platform: string | null
   url: string | null
   position: number | null
-  created_at: Date | null
-  updated_at: Date | null
+  createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type SocialLinkCountAggregateOutputType = {
@@ -62,8 +62,8 @@ export type SocialLinkCountAggregateOutputType = {
   platform: number
   url: number
   position: number
-  created_at: number
-  updated_at: number
+  createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -83,8 +83,8 @@ export type SocialLinkMinAggregateInputType = {
   platform?: true
   url?: true
   position?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type SocialLinkMaxAggregateInputType = {
@@ -92,8 +92,8 @@ export type SocialLinkMaxAggregateInputType = {
   platform?: true
   url?: true
   position?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
 }
 
 export type SocialLinkCountAggregateInputType = {
@@ -101,8 +101,8 @@ export type SocialLinkCountAggregateInputType = {
   platform?: true
   url?: true
   position?: true
-  created_at?: true
-  updated_at?: true
+  createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -197,8 +197,8 @@ export type SocialLinkGroupByOutputType = {
   platform: string
   url: string
   position: number | null
-  created_at: Date
-  updated_at: Date
+  createdAt: Date
+  updatedAt: Date
   _count: SocialLinkCountAggregateOutputType | null
   _avg: SocialLinkAvgAggregateOutputType | null
   _sum: SocialLinkSumAggregateOutputType | null
@@ -229,8 +229,8 @@ export type SocialLinkWhereInput = {
   platform?: Prisma.StringFilter<"SocialLink"> | string
   url?: Prisma.StringFilter<"SocialLink"> | string
   position?: Prisma.IntNullableFilter<"SocialLink"> | number | null
-  created_at?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
 }
 
 export type SocialLinkOrderByWithRelationInput = {
@@ -238,8 +238,8 @@ export type SocialLinkOrderByWithRelationInput = {
   platform?: Prisma.SortOrder
   url?: Prisma.SortOrder
   position?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SocialLinkWhereUniqueInput = Prisma.AtLeast<{
@@ -250,8 +250,8 @@ export type SocialLinkWhereUniqueInput = Prisma.AtLeast<{
   platform?: Prisma.StringFilter<"SocialLink"> | string
   url?: Prisma.StringFilter<"SocialLink"> | string
   position?: Prisma.IntNullableFilter<"SocialLink"> | number | null
-  created_at?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
+  createdAt?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"SocialLink"> | Date | string
 }, "id">
 
 export type SocialLinkOrderByWithAggregationInput = {
@@ -259,8 +259,8 @@ export type SocialLinkOrderByWithAggregationInput = {
   platform?: Prisma.SortOrder
   url?: Prisma.SortOrder
   position?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.SocialLinkCountOrderByAggregateInput
   _avg?: Prisma.SocialLinkAvgOrderByAggregateInput
   _max?: Prisma.SocialLinkMaxOrderByAggregateInput
@@ -276,16 +276,16 @@ export type SocialLinkScalarWhereWithAggregatesInput = {
   platform?: Prisma.StringWithAggregatesFilter<"SocialLink"> | string
   url?: Prisma.StringWithAggregatesFilter<"SocialLink"> | string
   position?: Prisma.IntNullableWithAggregatesFilter<"SocialLink"> | number | null
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"SocialLink"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"SocialLink"> | Date | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"SocialLink"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"SocialLink"> | Date | string
 }
 
 export type SocialLinkCreateInput = {
   platform: string
   url: string
   position?: number | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type SocialLinkUncheckedCreateInput = {
@@ -293,16 +293,16 @@ export type SocialLinkUncheckedCreateInput = {
   platform: string
   url: string
   position?: number | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type SocialLinkUpdateInput = {
   platform?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SocialLinkUncheckedUpdateInput = {
@@ -310,8 +310,8 @@ export type SocialLinkUncheckedUpdateInput = {
   platform?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SocialLinkCreateManyInput = {
@@ -319,16 +319,16 @@ export type SocialLinkCreateManyInput = {
   platform: string
   url: string
   position?: number | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type SocialLinkUpdateManyMutationInput = {
   platform?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SocialLinkUncheckedUpdateManyInput = {
@@ -336,8 +336,8 @@ export type SocialLinkUncheckedUpdateManyInput = {
   platform?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
   position?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type SocialLinkCountOrderByAggregateInput = {
@@ -345,8 +345,8 @@ export type SocialLinkCountOrderByAggregateInput = {
   platform?: Prisma.SortOrder
   url?: Prisma.SortOrder
   position?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SocialLinkAvgOrderByAggregateInput = {
@@ -359,8 +359,8 @@ export type SocialLinkMaxOrderByAggregateInput = {
   platform?: Prisma.SortOrder
   url?: Prisma.SortOrder
   position?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SocialLinkMinOrderByAggregateInput = {
@@ -368,8 +368,8 @@ export type SocialLinkMinOrderByAggregateInput = {
   platform?: Prisma.SortOrder
   url?: Prisma.SortOrder
   position?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type SocialLinkSumOrderByAggregateInput = {
@@ -392,8 +392,8 @@ export type SocialLinkSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   platform?: boolean
   url?: boolean
   position?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["socialLink"]>
 
 export type SocialLinkSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -401,8 +401,8 @@ export type SocialLinkSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   platform?: boolean
   url?: boolean
   position?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["socialLink"]>
 
 export type SocialLinkSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -410,8 +410,8 @@ export type SocialLinkSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   platform?: boolean
   url?: boolean
   position?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["socialLink"]>
 
 export type SocialLinkSelectScalar = {
@@ -419,11 +419,11 @@ export type SocialLinkSelectScalar = {
   platform?: boolean
   url?: boolean
   position?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type SocialLinkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "platform" | "url" | "position" | "created_at" | "updated_at", ExtArgs["result"]["socialLink"]>
+export type SocialLinkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "platform" | "url" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["socialLink"]>
 
 export type $SocialLinkPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "SocialLink"
@@ -433,8 +433,8 @@ export type $SocialLinkPayload<ExtArgs extends runtime.Types.Extensions.Internal
     platform: string
     url: string
     position: number | null
-    created_at: Date
-    updated_at: Date
+    createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["socialLink"]>
   composites: {}
 }
@@ -862,8 +862,8 @@ export interface SocialLinkFieldRefs {
   readonly platform: Prisma.FieldRef<"SocialLink", 'String'>
   readonly url: Prisma.FieldRef<"SocialLink", 'String'>
   readonly position: Prisma.FieldRef<"SocialLink", 'Int'>
-  readonly created_at: Prisma.FieldRef<"SocialLink", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"SocialLink", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"SocialLink", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"SocialLink", 'DateTime'>
 }
     
 

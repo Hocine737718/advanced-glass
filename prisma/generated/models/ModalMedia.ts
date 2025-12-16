@@ -269,7 +269,7 @@ export type ModalMediaScalarWhereWithAggregatesInput = {
 export type ModalMediaCreateInput = {
   role?: string | null
   modal: Prisma.ModalCreateNestedOneWithoutMediaInput
-  media: Prisma.MediaCreateNestedOneWithoutModalMediaInput
+  media: Prisma.MediaCreateNestedOneWithoutModalMediasInput
 }
 
 export type ModalMediaUncheckedCreateInput = {
@@ -282,7 +282,7 @@ export type ModalMediaUncheckedCreateInput = {
 export type ModalMediaUpdateInput = {
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   modal?: Prisma.ModalUpdateOneRequiredWithoutMediaNestedInput
-  media?: Prisma.MediaUpdateOneRequiredWithoutModalMediaNestedInput
+  media?: Prisma.MediaUpdateOneRequiredWithoutModalMediasNestedInput
 }
 
 export type ModalMediaUncheckedUpdateInput = {
@@ -353,48 +353,6 @@ export type ModalMediaSumOrderByAggregateInput = {
   media_id?: Prisma.SortOrder
 }
 
-export type ModalMediaCreateNestedManyWithoutMediaInput = {
-  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
-  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
-  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-}
-
-export type ModalMediaUncheckedCreateNestedManyWithoutMediaInput = {
-  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
-  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
-  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-}
-
-export type ModalMediaUpdateManyWithoutMediaNestedInput = {
-  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
-  upsert?: Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput[]
-  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
-  set?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  disconnect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  delete?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  update?: Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput[]
-  updateMany?: Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput | Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput[]
-  deleteMany?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
-}
-
-export type ModalMediaUncheckedUpdateManyWithoutMediaNestedInput = {
-  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
-  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
-  upsert?: Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput[]
-  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
-  set?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  disconnect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  delete?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
-  update?: Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput[]
-  updateMany?: Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput | Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput[]
-  deleteMany?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
-}
-
 export type ModalMediaCreateNestedManyWithoutModalInput = {
   create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutModalInput, Prisma.ModalMediaUncheckedCreateWithoutModalInput> | Prisma.ModalMediaCreateWithoutModalInput[] | Prisma.ModalMediaUncheckedCreateWithoutModalInput[]
   connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutModalInput | Prisma.ModalMediaCreateOrConnectWithoutModalInput[]
@@ -437,6 +395,95 @@ export type ModalMediaUncheckedUpdateManyWithoutModalNestedInput = {
   deleteMany?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
 }
 
+export type ModalMediaCreateNestedManyWithoutMediaInput = {
+  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
+  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
+  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+}
+
+export type ModalMediaUncheckedCreateNestedManyWithoutMediaInput = {
+  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
+  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
+  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+}
+
+export type ModalMediaUpdateManyWithoutMediaNestedInput = {
+  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
+  upsert?: Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput[]
+  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
+  set?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  disconnect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  delete?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  update?: Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput[]
+  updateMany?: Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput | Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput[]
+  deleteMany?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
+}
+
+export type ModalMediaUncheckedUpdateManyWithoutMediaNestedInput = {
+  create?: Prisma.XOR<Prisma.ModalMediaCreateWithoutMediaInput, Prisma.ModalMediaUncheckedCreateWithoutMediaInput> | Prisma.ModalMediaCreateWithoutMediaInput[] | Prisma.ModalMediaUncheckedCreateWithoutMediaInput[]
+  connectOrCreate?: Prisma.ModalMediaCreateOrConnectWithoutMediaInput | Prisma.ModalMediaCreateOrConnectWithoutMediaInput[]
+  upsert?: Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpsertWithWhereUniqueWithoutMediaInput[]
+  createMany?: Prisma.ModalMediaCreateManyMediaInputEnvelope
+  set?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  disconnect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  delete?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  connect?: Prisma.ModalMediaWhereUniqueInput | Prisma.ModalMediaWhereUniqueInput[]
+  update?: Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput | Prisma.ModalMediaUpdateWithWhereUniqueWithoutMediaInput[]
+  updateMany?: Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput | Prisma.ModalMediaUpdateManyWithWhereWithoutMediaInput[]
+  deleteMany?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
+}
+
+export type ModalMediaCreateWithoutModalInput = {
+  role?: string | null
+  media: Prisma.MediaCreateNestedOneWithoutModalMediasInput
+}
+
+export type ModalMediaUncheckedCreateWithoutModalInput = {
+  id?: number
+  media_id: number
+  role?: string | null
+}
+
+export type ModalMediaCreateOrConnectWithoutModalInput = {
+  where: Prisma.ModalMediaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ModalMediaCreateWithoutModalInput, Prisma.ModalMediaUncheckedCreateWithoutModalInput>
+}
+
+export type ModalMediaCreateManyModalInputEnvelope = {
+  data: Prisma.ModalMediaCreateManyModalInput | Prisma.ModalMediaCreateManyModalInput[]
+  skipDuplicates?: boolean
+}
+
+export type ModalMediaUpsertWithWhereUniqueWithoutModalInput = {
+  where: Prisma.ModalMediaWhereUniqueInput
+  update: Prisma.XOR<Prisma.ModalMediaUpdateWithoutModalInput, Prisma.ModalMediaUncheckedUpdateWithoutModalInput>
+  create: Prisma.XOR<Prisma.ModalMediaCreateWithoutModalInput, Prisma.ModalMediaUncheckedCreateWithoutModalInput>
+}
+
+export type ModalMediaUpdateWithWhereUniqueWithoutModalInput = {
+  where: Prisma.ModalMediaWhereUniqueInput
+  data: Prisma.XOR<Prisma.ModalMediaUpdateWithoutModalInput, Prisma.ModalMediaUncheckedUpdateWithoutModalInput>
+}
+
+export type ModalMediaUpdateManyWithWhereWithoutModalInput = {
+  where: Prisma.ModalMediaScalarWhereInput
+  data: Prisma.XOR<Prisma.ModalMediaUpdateManyMutationInput, Prisma.ModalMediaUncheckedUpdateManyWithoutModalInput>
+}
+
+export type ModalMediaScalarWhereInput = {
+  AND?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
+  OR?: Prisma.ModalMediaScalarWhereInput[]
+  NOT?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
+  id?: Prisma.IntFilter<"ModalMedia"> | number
+  modal_id?: Prisma.IntFilter<"ModalMedia"> | number
+  media_id?: Prisma.IntFilter<"ModalMedia"> | number
+  role?: Prisma.StringNullableFilter<"ModalMedia"> | string | null
+}
+
 export type ModalMediaCreateWithoutMediaInput = {
   role?: string | null
   modal: Prisma.ModalCreateNestedOneWithoutMediaInput
@@ -474,51 +521,27 @@ export type ModalMediaUpdateManyWithWhereWithoutMediaInput = {
   data: Prisma.XOR<Prisma.ModalMediaUpdateManyMutationInput, Prisma.ModalMediaUncheckedUpdateManyWithoutMediaInput>
 }
 
-export type ModalMediaScalarWhereInput = {
-  AND?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
-  OR?: Prisma.ModalMediaScalarWhereInput[]
-  NOT?: Prisma.ModalMediaScalarWhereInput | Prisma.ModalMediaScalarWhereInput[]
-  id?: Prisma.IntFilter<"ModalMedia"> | number
-  modal_id?: Prisma.IntFilter<"ModalMedia"> | number
-  media_id?: Prisma.IntFilter<"ModalMedia"> | number
-  role?: Prisma.StringNullableFilter<"ModalMedia"> | string | null
-}
-
-export type ModalMediaCreateWithoutModalInput = {
-  role?: string | null
-  media: Prisma.MediaCreateNestedOneWithoutModalMediaInput
-}
-
-export type ModalMediaUncheckedCreateWithoutModalInput = {
+export type ModalMediaCreateManyModalInput = {
   id?: number
   media_id: number
   role?: string | null
 }
 
-export type ModalMediaCreateOrConnectWithoutModalInput = {
-  where: Prisma.ModalMediaWhereUniqueInput
-  create: Prisma.XOR<Prisma.ModalMediaCreateWithoutModalInput, Prisma.ModalMediaUncheckedCreateWithoutModalInput>
+export type ModalMediaUpdateWithoutModalInput = {
+  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  media?: Prisma.MediaUpdateOneRequiredWithoutModalMediasNestedInput
 }
 
-export type ModalMediaCreateManyModalInputEnvelope = {
-  data: Prisma.ModalMediaCreateManyModalInput | Prisma.ModalMediaCreateManyModalInput[]
-  skipDuplicates?: boolean
+export type ModalMediaUncheckedUpdateWithoutModalInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  media_id?: Prisma.IntFieldUpdateOperationsInput | number
+  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type ModalMediaUpsertWithWhereUniqueWithoutModalInput = {
-  where: Prisma.ModalMediaWhereUniqueInput
-  update: Prisma.XOR<Prisma.ModalMediaUpdateWithoutModalInput, Prisma.ModalMediaUncheckedUpdateWithoutModalInput>
-  create: Prisma.XOR<Prisma.ModalMediaCreateWithoutModalInput, Prisma.ModalMediaUncheckedCreateWithoutModalInput>
-}
-
-export type ModalMediaUpdateWithWhereUniqueWithoutModalInput = {
-  where: Prisma.ModalMediaWhereUniqueInput
-  data: Prisma.XOR<Prisma.ModalMediaUpdateWithoutModalInput, Prisma.ModalMediaUncheckedUpdateWithoutModalInput>
-}
-
-export type ModalMediaUpdateManyWithWhereWithoutModalInput = {
-  where: Prisma.ModalMediaScalarWhereInput
-  data: Prisma.XOR<Prisma.ModalMediaUpdateManyMutationInput, Prisma.ModalMediaUncheckedUpdateManyWithoutModalInput>
+export type ModalMediaUncheckedUpdateManyWithoutModalInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  media_id?: Prisma.IntFieldUpdateOperationsInput | number
+  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ModalMediaCreateManyMediaInput = {
@@ -541,29 +564,6 @@ export type ModalMediaUncheckedUpdateWithoutMediaInput = {
 export type ModalMediaUncheckedUpdateManyWithoutMediaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   modal_id?: Prisma.IntFieldUpdateOperationsInput | number
-  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type ModalMediaCreateManyModalInput = {
-  id?: number
-  media_id: number
-  role?: string | null
-}
-
-export type ModalMediaUpdateWithoutModalInput = {
-  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  media?: Prisma.MediaUpdateOneRequiredWithoutModalMediaNestedInput
-}
-
-export type ModalMediaUncheckedUpdateWithoutModalInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  media_id?: Prisma.IntFieldUpdateOperationsInput | number
-  role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type ModalMediaUncheckedUpdateManyWithoutModalInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  media_id?: Prisma.IntFieldUpdateOperationsInput | number
   role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 

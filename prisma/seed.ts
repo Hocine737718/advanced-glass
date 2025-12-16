@@ -1,5 +1,5 @@
 import { PrismaPg } from '@prisma/adapter-pg'
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from './generated/client';
 import { seedAdminUser } from './seeds/seedAdminUser';
 // Import other seed functions as needed
 
