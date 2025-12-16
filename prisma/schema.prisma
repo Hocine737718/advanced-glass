@@ -1,0 +1,390 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/**
+ * =========================
+ * USERS (ADMIN)
+ * =========================
+ */
+model UserAccount {
+  id            Int     @id @default(autoincrement())
+  email         String  @unique
+  password_hash String
+  role          String  @default("admin")
+  is_active     Boolean @default(true)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+/**
+ * =========================
+ * LANGUAGE
+ * =========================
+ */
+model Language {
+  code       String  @id
+  name       String
+  is_default Boolean @default(false)
+
+  pageTranslations        PageTranslation[]
+  sectionTranslations     SectionTranslation[]
+  sectionItemTranslations SectionItemTranslation[]
+  modalTranslations       ModalTranslation[]
+  personTranslations      PersonTranslation[]
+}
+
+/**
+ * =========================
+ * MEDIA
+ * =========================
+ */
+model Media {
+  id        Int     @id @default(autoincrement())
+  type      String
+  file_path String
+  alt_text  String?
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  sectionItemMedia SectionItemMedia[]
+  modalMedia       ModalMedia[]
+}
+
+/**
+ * =========================
+ * SITE SETTINGS
+ * =========================
+ */
+model SiteSetting {
+  id    Int     @id @default(autoincrement())
+  key   String  @unique
+  value String?
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+/**
+ * =========================
+ * SOCIAL LINKS
+ * =========================
+ */
+model SocialLink {
+  id       Int    @id @default(autoincrement())
+  platform String
+  url      String
+  position Int?
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+/**
+ * =========================
+ * PAGE
+ * =========================
+ */
+model Page {
+  id        Int     @id @default(autoincrement())
+  slug      String  @unique
+  published Boolean @default(true)
+  position  Int?
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  translations PageTranslation[]
+  sections     Section[]
+}
+
+/**
+ * =========================
+ * PAGE TRANSLATION
+ * =========================
+ */
+model PageTranslation {
+  id              Int     @id @default(autoincrement())
+  page_id         Int
+  language        String
+  title           String?
+  seo_title       String?
+  seo_description String?
+
+  page Page     @relation(fields: [page_id], references: [id], onDelete: Cascade)
+  lang Language @relation(fields: [language], references: [code])
+
+  @@unique([page_id, language])
+}
+
+/**
+ * =========================
+ * SECTION
+ * =========================
+ */
+model Section {
+  id        Int     @id @default(autoincrement())
+  page_id   Int
+  type      String
+  position  Int?
+  published Boolean @default(true)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  page         Page                 @relation(fields: [page_id], references: [id], onDelete: Cascade)
+  translations SectionTranslation[]
+  items        SectionItem[]
+}
+
+/**
+ * =========================
+ * SECTION TRANSLATION
+ * =========================
+ */
+model SectionTranslation {
+  id         Int     @id @default(autoincrement())
+  section_id Int
+  language   String
+  title      String?
+  content    String?
+
+  section Section  @relation(fields: [section_id], references: [id], onDelete: Cascade)
+  lang    Language @relation(fields: [language], references: [code])
+
+  @@unique([section_id, language])
+}
+
+/**
+ * =========================
+ * SECTION ITEM
+ * =========================
+ */
+model SectionItem {
+  id         Int     @id @default(autoincrement())
+  section_id Int
+  type       String
+  position   Int?
+  published  Boolean @default(true)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  section      Section                  @relation(fields: [section_id], references: [id], onDelete: Cascade)
+  translations SectionItemTranslation[]
+  media        SectionItemMedia[]
+  links        SectionItemLink[]
+  modals       SectionItemModal[]
+}
+
+/**
+ * =========================
+ * SECTION ITEM TRANSLATION
+ * =========================
+ */
+model SectionItemTranslation {
+  id              Int     @id @default(autoincrement())
+  section_item_id Int
+  language        String
+  title           String?
+  content         String?
+
+  item SectionItem @relation(fields: [section_item_id], references: [id], onDelete: Cascade)
+  lang Language    @relation(fields: [language], references: [code])
+
+  @@unique([section_item_id, language])
+}
+
+/**
+ * =========================
+ * SECTION ITEM MEDIA
+ * =========================
+ */
+model SectionItemMedia {
+  id              Int     @id @default(autoincrement())
+  section_item_id Int
+  media_id        Int
+  role            String?
+  position        Int?
+
+  item  SectionItem @relation(fields: [section_item_id], references: [id], onDelete: Cascade)
+  media Media       @relation(fields: [media_id], references: [id])
+}
+
+/**
+ * =========================
+ * LINK
+ * =========================
+ */
+model Link {
+  id     Int    @id @default(autoincrement())
+  type   String
+  url    String
+  target String @default("_self")
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  items SectionItemLink[]
+}
+
+/**
+ * =========================
+ * SECTION ITEM ↔ LINK
+ * =========================
+ */
+model SectionItemLink {
+  section_item_id Int
+  link_id         Int
+
+  item SectionItem @relation(fields: [section_item_id], references: [id], onDelete: Cascade)
+  link Link        @relation(fields: [link_id], references: [id], onDelete: Cascade)
+
+  @@id([section_item_id, link_id])
+}
+
+/**
+ * =========================
+ * MODAL
+ * =========================
+ */
+model Modal {
+  id        Int     @id @default(autoincrement())
+  code      String  @unique
+  published Boolean @default(true)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  translations ModalTranslation[]
+  media        ModalMedia[]
+  items        SectionItemModal[]
+}
+
+/**
+ * =========================
+ * MODAL TRANSLATION
+ * =========================
+ */
+model ModalTranslation {
+  id       Int     @id @default(autoincrement())
+  modal_id Int
+  language String
+  title    String?
+  content  String?
+
+  modal Modal    @relation(fields: [modal_id], references: [id], onDelete: Cascade)
+  lang  Language @relation(fields: [language], references: [code])
+
+  @@unique([modal_id, language])
+}
+
+/**
+ * =========================
+ * MODAL MEDIA
+ * =========================
+ */
+model ModalMedia {
+  id       Int     @id @default(autoincrement())
+  modal_id Int
+  media_id Int
+  role     String?
+
+  modal Modal @relation(fields: [modal_id], references: [id], onDelete: Cascade)
+  media Media @relation(fields: [media_id], references: [id])
+}
+
+/**
+ * =========================
+ * SECTION ITEM ↔ MODAL
+ * =========================
+ */
+model SectionItemModal {
+  section_item_id Int
+  modal_id        Int
+
+  item  SectionItem @relation(fields: [section_item_id], references: [id], onDelete: Cascade)
+  modal Modal       @relation(fields: [modal_id], references: [id], onDelete: Cascade)
+
+  @@id([section_item_id, modal_id])
+}
+
+/**
+ * =========================
+ * PERSON
+ * =========================
+ */
+model Person {
+  id        Int     @id @default(autoincrement())
+  role      String?
+  email     String?
+  published Boolean @default(true)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  translations PersonTranslation[]
+  addresses    Address[]
+  phones       Phone[]
+}
+
+/**
+ * =========================
+ * PERSON TRANSLATION
+ * =========================
+ */
+model PersonTranslation {
+  id        Int     @id @default(autoincrement())
+  person_id Int
+  language  String
+  name      String?
+  position  String?
+
+  person Person   @relation(fields: [person_id], references: [id], onDelete: Cascade)
+  lang   Language @relation(fields: [language], references: [code])
+
+  @@unique([person_id, language])
+}
+
+/**
+ * =========================
+ * ADDRESS
+ * =========================
+ */
+model Address {
+  id        Int     @id @default(autoincrement())
+  person_id Int
+  label     String?
+  address   String?
+  city      String?
+  country   String?
+
+  person Person @relation(fields: [person_id], references: [id], onDelete: Cascade)
+}
+
+/**
+ * =========================
+ * PHONE
+ * =========================
+ */
+model Phone {
+  id        Int     @id @default(autoincrement())
+  person_id Int
+  label     String?
+  number    String
+
+  person Person @relation(fields: [person_id], references: [id], onDelete: Cascade)
+}
