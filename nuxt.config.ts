@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  
+  modules: [ '@unhead/vue', '@vueuse/nuxt'],
   routeRules: {
     // Public routes
     '/api/auth/**': { cors: true },
@@ -38,5 +38,5 @@ export default defineNuxtConfig({
       apiBase: '/api',
       appName: 'Advanced Glass',
     }
-  }
+  },
 })

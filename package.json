@@ -16,6 +16,8 @@
     "@prisma/adapter-pg": "^7.1.0",
     "@prisma/client": "^7.1.0",
     "@types/multer": "^2.0.0",
+    "@unhead/vue": "^2.0.19",
+    "@vueuse/core": "^14.1.0",
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.3",
     "jsonwebtoken": "^9.0.3",
