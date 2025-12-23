@@ -1,5 +1,5 @@
 import { randomBytes } from 'crypto'
-import { writeFile, mkdir } from 'fs/promises'
+import { mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import path from 'path'
 

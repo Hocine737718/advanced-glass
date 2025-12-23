@@ -1,4 +1,4 @@
-import type { EventHandler, EventHandlerRequest } from 'h3'
+import type { EventHandler } from 'h3'
 import { requireAuth, requireAdmin } from './auth'
 
 export function createHandler(

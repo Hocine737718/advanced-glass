@@ -2,6 +2,16 @@ import { createHandler } from '../../utils/baseHandler'
 import { MediaService } from '../../services/media.service'
 import { readMultipartFormData } from 'h3'
 
+const ALLOWED_MIME_TYPES = [
+  'image/jpeg',
+  'image/png',
+  'image/gif',
+  'image/webp',
+  'application/pdf'
+]
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
+
 const handler = defineEventHandler(async (event) => {
   const parts = await readMultipartFormData(event)
   
@@ -21,13 +31,35 @@ const handler = defineEventHandler(async (event) => {
     })
   }
   
+  // Validate file size
+  if (filePart.data.length > MAX_FILE_SIZE) {
+    throw createError({
+      statusCode: 413,
+      statusMessage: `File too large (max ${MAX_FILE_SIZE / 1024 / 1024}MB)`
+    })
+  }
+  
+  // Validate file type
+  if (!ALLOWED_MIME_TYPES.includes(filePart.type as string)) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: `Invalid file type. Allowed: ${ALLOWED_MIME_TYPES.join(', ')}`
+    })
+  }
+  
+  // Sanitize filename
+  const sanitizedName = filePart.filename
+    ? filePart.filename.replace(/[^a-zA-Z0-9.-]/g, '_')
+    : 'upload'
+  
   const user = event.context.user
   
   const media = await MediaService.uploadFile(
     {
-      name: filePart.filename || 'upload',
+      name: sanitizedName,
       data: filePart.data,
-      size: filePart.data.length
+      size: filePart.data.length,
+      //type: filePart.type
     },
     user?.sub
   )
@@ -35,7 +67,8 @@ const handler = defineEventHandler(async (event) => {
   return {
     success: true,
     media,
-    url: media.path
+    url: media.path,
+    message: 'File uploaded successfully'
   }
 })
 
